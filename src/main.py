@@ -10,3 +10,7 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+@app.get('/healthz')
+def api_health_check():
+    return {'status': 'ok'}
